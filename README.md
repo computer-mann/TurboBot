@@ -1,2 +1,2 @@
 # TurboBot
-Tapping into the twitter API to hopefully get pin down second hand mtn turbonet sellers
+Tapping into the twitter API to hopefully pin down second hand mtn turbonet sellers
