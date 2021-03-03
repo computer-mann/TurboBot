@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace turbobot.Configuration
 {
-    public class Twitter
+    public class TwitterOptions
     {
         public Api Api { get; set; }
         public string BearerToken { get; set; }

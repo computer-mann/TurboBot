@@ -13,7 +13,7 @@ nupkg/
 
 
 #My SEcrets to never be commited
-appsettings.Secrets.json
+appsettings.Development.json
 # User-specific files
 *.suo
 *.user

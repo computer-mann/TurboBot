@@ -1,23 +1,38 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using turbobot.Configuration;
 
 namespace turbobot.Controllers
 {
     public class TweetController : Controller
     {
-        private readonly HttpClient httpClient;
+        private readonly IHttpClientFactory clientFactory;
+        private readonly ILogger logger;
+        private readonly TwitterOptions twitterConf;
 
-        public TweetController(HttpClient httpClient)
+        public TweetController(IHttpClientFactory clientFactory,ILogger<TweetController> logger,
+                                    IOptions<TwitterOptions> options)
         {
-            this.httpClient = httpClient;
+            this.clientFactory = clientFactory;
+            this.logger = logger;
+            twitterConf = options.Value;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var client = clientFactory.CreateClient();
+            var response =await client.GetStringAsync("https://jsonplaceholder.typicode.com/todos/2");
+            //if(!response)
+            //{
+            //    logger.LogInformation("error message", response.Status);
+            //    return Redirect("/");
+            //}
+            return View(model: response);
         }
     }
 }
