@@ -1,0 +1,19 @@
+﻿twitter keywords
+
+Mtn Turnbonet selling available going price @MTN @mtn @mtnturbonet
+from:@Mtnghana place_country:GH
+
+
+
+
+curl -X POST 'https://api.twitter.com/2/tweets/search/stream/rules' \ -H "Content-type: application/json" \ -H Authorization: Bearer $BEARER_TOKEN" -d \ '{  "add": [ {"value": "from:twitterdev from:twitterapi has:links"}   ]}'
+
+
+"?query=mtn&tweet.fields=author_id,created_at," +
+"entities,geo,in_reply_to_user_id,lang," +
+"possibly_sensitive,referenced_tweets,source&max_results=10"
+
+https://twitter.com/{username}/status/{tweet_id}
+
+
+https://api.twitter.com/2/tweets/search/recent?query=mtn turbonet&expansions=author_id&next_token=b26v89c19zqg8o3fosntrnvxxiivl073agp0d1udwc519&tweet.fields=author_id&user.fields=name,username,verified

@@ -20,11 +20,13 @@ namespace turbobot.Controllers
 
         public IActionResult Index()
         {
+            ViewData["Title"] = "Home";
             return View();
         }
 
         public IActionResult Privacy()
         {
+            ViewData["Title"] = "Privacy";
             return View();
         }
 
